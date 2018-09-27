@@ -5,7 +5,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Word Guess Game</title>
-
+   <!--Reset CSS File-->
+   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+   
    <!-- link to jquery -->
    <script
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -14,12 +16,18 @@
 
   <!-- link to Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!--CSS File-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
   <div class="container">
-   <h1 class="header">Guess The Password!</h1>
-   <h3 id="secretWord"></h3>
+  <h1 class="header">Guess The Password!</h1>
+   <div class="jumbotron">
+     <h1 class="text-success" id="secretWord"></h1>
+   </div>
+   <h4>Click a letter below to enter a guess</h4>
    <div id="buttons"></div>
    <ul>
     <li id="wrongGuess">Wrong Guesses: 0</li>

@@ -81,11 +81,14 @@ function deleteKeys() {
 
 //resets game
 function playAgain() {
-  var again = confirm("Play Again?");
-  if(again) {
+  $("#replay").append("<h4>Click to Play Again</h4>");
+  var replayBtn = $("<button>Play Again</button>");
+  replayBtn.addClass("btn-success btn-large replayBtn");
+  $("#replay").append(replayBtn);
+  $(".replayBtn").on("click", function() {
     deleteKeys();
     main();
-  }
+  });
 }
 
 
@@ -93,11 +96,13 @@ function playAgain() {
 function checkWin(game) {
   if(game.wordArray.includes("_") === false && game.wrongGuess < 5) {
     wins++;
-    alert("You Win! \nNumber of Wins: " + wins);
+    $("#numWins").text("Wins: " + wins);
+    $("#replay").append("<h3>You Win!<h3>");
     playAgain();
   } else if (game.wrongGuess >= 5) {
     losses++;
-    alert("You Lose! :(\nThe Password Was: " + game.secret + "\nNumber of Losses: " + losses);
+    $("#numLosses").text("Losses: " + losses);
+    $("#replay").append("<h3>You Lose! The Word Was: " + game.secret + "<h3>");
     playAgain();
   } 
 }
@@ -114,6 +119,8 @@ function clickEvent(event) {
 
 //runs to setup game
 function main() {
+  $("#replay").empty();
+  $("#replay").off();
   var secret = pickSecret(wordList).toUpperCase();
   game = new Hangman(secret); 
   createKeys();

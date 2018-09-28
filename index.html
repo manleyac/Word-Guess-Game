@@ -23,18 +23,21 @@
 
 <body>
   <div class="container">
-  <h1 class="header">Guess The Password!</h1>
-   <div class="jumbotron">
-     <h1 class="text-success" id="secretWord"></h1>
-   </div>
-   <h4>Click a letter below to enter a guess</h4>
-   <div id="buttons"></div>
-   <ul>
-    <li id="wrongGuess">Wrong Guesses: 0</li>
-    <li id="numWins">Wins: 0</li>
-    <li id="numLosses">Losses: 0</li>
+    <h1 class="header">Guess The Password!</h1>
+    <div class="jumbotron">
+      <h1 class="text-success" id="secretWord"></h1>
+    </div>
+    <h4>Click a letter below to enter a guess. You lose after 5 wrong guesses.</h4>
+    <div id="buttons"></div>
+    <ul>
+      <li id="wrongGuess">Wrong Guesses: 0</li>
+      <li id="numWins">Wins: 0</li>
+      <li id="numLosses">Losses: 0</li>
     </ul>
+    <div id="replay">
+    </div>
   </div>
+  
    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
